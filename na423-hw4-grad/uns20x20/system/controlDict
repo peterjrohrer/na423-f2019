@@ -37,7 +37,6 @@ writeFormat     ascii;
 
 writePrecision  6;
 
-writeCompression uncompressed;
 
 timeFormat      general;
 
@@ -45,5 +44,36 @@ timePrecision   6;
 
 runTimeModifiable yes;
 
+functions
+{
+readFields
+    {
+        libs ( "libfieldFunctionObjects.so" );
+        type            readFields;
+        fields          ( gradTx gradTy);
+    }
+    sample1
+    {
+        type        sets;
+        libs        ("libsampling.so");
+        writeControl onEnd;
+        setFormat   raw;
+        sets
+        (
+            line1
+            {
+                type        face;   
+                axis        y;
+
+                // Slightly perturbed so as not to align with face or edge
+                start       (0.5    0.0 0.00501);
+                end         (0.5    1.0 0.00501);
+                nPoints     200;
+            }
+        );
+        interpolationScheme cellPoint;
+        fields          (T gradTy gradTx);
+    }
+}
 
 // ************************************************************************* //
