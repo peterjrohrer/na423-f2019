@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     {
         Info<< "Time = " << runTime.timeName() << nl << endl;
 
-        while (simple.correctNonOrthogonal())
+/*        while (simple.correctNonOrthogonal())
         {
             fvScalarMatrix TEqn
             (
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
             TEqn.solve();
             fvOptions.correct(T);
         }
-
+*/
         #include "write.H"
 
         runTime.printExecutionTime(Info);
