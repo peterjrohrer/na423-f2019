@@ -36,6 +36,7 @@ dimensionedScalar DT("DT", dimViscosity, transportProperties);
 #include "createFvOptions.H"
 
 const scalar pi(M_PI);
+
 Info << "pi = " << pi << endl;
 
 forAll(T, cellI)
