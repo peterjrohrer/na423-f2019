@@ -10,8 +10,8 @@ runApplication blockMesh
 # Decompose case for parallel grid generation
 runApplication decomposePar
 
-# Generate grid in parallel using 4 cores
-runParallel snappyHexMesh 4 -overwrite
+# Generate grid in parallel
+runParallel snappyHexMesh -overwrite
 
 #- For non-parallel running
 #cp -r 0.org 0 > /dev/null 2>&1
@@ -19,11 +19,5 @@ runParallel snappyHexMesh 4 -overwrite
 #- For parallel running
 ls -d processor* | xargs -I {} rm -rf ./{}/0
 ls -d processor* | xargs -I {} cp -r 0.org ./{}/0
-
-runParallel $(getApplication) 4
-
-runApplication reconstructParMesh -constant
-runApplication reconstructPar -latestTime
-runApplication yPlusRAS -latestTime
 
 # ----------------------------------------------------------------- end-of-file

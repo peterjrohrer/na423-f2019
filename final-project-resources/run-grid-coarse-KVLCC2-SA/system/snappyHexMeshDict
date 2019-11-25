@@ -97,7 +97,7 @@ FoamFile
         maxGlobalCells 20000000;
         minRefinementCells 0;
         nCellsBetweenLevels 3;
-        resolveFeatureAngle 10;
+        resolveFeatureAngle 30;
         allowFreeStandingZoneFaces false;
         planarAngle 30;
         maxLoadUnbalance 0.10;
@@ -105,10 +105,10 @@ FoamFile
 
     snapControls
     {
-        nSolveIter 50;
+        nSolveIter 100;
         nSmoothPatch 3;
         tolerance 2.0;
-        nRelaxIter 5;
+        nRelaxIter 10;
         nFeatureSnapIter 10;
         implicitFeatureSnap false;
         explicitFeatureSnap true;
