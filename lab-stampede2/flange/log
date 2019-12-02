@@ -1,0 +1,3 @@
+Running blockMesh on /home/kjmaki/na423-2019/lab-stampede2/flange
+Running surfaceFeatureExtract on /home/kjmaki/na423-2019/lab-stampede2/flange
+Running snappyHexMesh on /home/kjmaki/na423-2019/lab-stampede2/flange
