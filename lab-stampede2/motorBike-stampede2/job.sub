@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A TG-SEE180001       # project ID
+#SBATCH -A TG-ECS190011       # project ID
 #SBATCH -J testJob            # job name
 #SBATCH -o log.o%j            # output and error file name (%j expands to jobID)
 #SBATCH -e error.o%j          # output and error file name (%j expands to jobID)
